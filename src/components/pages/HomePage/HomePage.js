@@ -92,6 +92,7 @@ class HomePage extends React.Component {
   renderPost = () => {
     var elem = [];
     var postList = this.state.posts;
+    const selectedNetwork = this.state.selectedNetwork
     console.log(this.state.posts.length)
     for (var index = 0; index < postList.length; index++) {
       const element = postList[index];
