@@ -92,7 +92,7 @@ class HomePage extends React.Component {
     var elem = [];
     var postList = this.state.posts;
     const selectedNetwork = this.state.selectedNetwork
-    console.log(this.state.posts.length)
+    console.log(this.state.posts)
     for (var index = 0; index < postList.length; index++) {
       const element = postList[index];
       if (selectedNetwork === 'TWITTER') {
@@ -105,7 +105,7 @@ class HomePage extends React.Component {
           elem.push(
             <InstagramEmbed
               key={index}
-              url={'https://instagr.am/p/' + element.id_post}
+              url={element.data.link}
             />
           )
         }
