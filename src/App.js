@@ -9,6 +9,7 @@ import Axios from "axios";
 
 Axios.defaults.withCredentials = true;
 Axios.defaults.headers["X-Requested-With"] = 'XMLHttpRequest';
+// Axios.defaults.headers["crossDomain"] = true;
 Axios.defaults.crossDomain = true;
 
 const BasicExample = () => (
