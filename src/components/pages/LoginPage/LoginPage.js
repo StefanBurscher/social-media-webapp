@@ -38,16 +38,7 @@ class LoginPage extends React.Component {
         })
             .then(response => {
                 this.setState({ accountLoading: false });
-                axios.get('http://207.180.216.94/api/v1/users/me')
-                    .then(response => {
-                        axios.get('http://207.180.216.94/api/v1/users/' + response.id + '/sleeves')
-                            .then(response1 => {
-                                this.setState({
-                                    socialNetworks: response1.data.items
-                                })
-                            })
-                    })
-                // this.props.history.push('/');
+                this.props.history.push('/');
             })
             .catch((error) => {
                 console.log(error)
