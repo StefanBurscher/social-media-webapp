@@ -50,10 +50,10 @@ class HomePage extends React.Component {
   componentDidMount = () => {
     axios.get('http://207.180.216.94/api/v1/users/me')
       .then(response => {
-        axios.get('http://207.180.216.94/api/v1/users/' + response.data.id + '/sleeves')
+        axios.get('http://207.180.216.94/api/v1/users/' + response.data.data.id + '/sleeves')
           .then(response1 => {
             this.setState({
-              socialNetworks: response1.data.items
+              socialNetworks: response1.data.data.items
             })
           })
       })
