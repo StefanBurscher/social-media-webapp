@@ -72,11 +72,10 @@ class HomePage extends React.Component {
   renderButtons = () => {
     var elem = [];
     var socialNetworkList = this.state.socialNetworks;
-    console.log(this.state.socialNetworks)
     for (var index = 0; index < socialNetworkList.length; index++) {
       const element = socialNetworkList[index].SocialNetwork.name;
       elem.push(
-        <a onClick={() => this.onButtonClick(element)}>{element}</a>
+        <a href="#" onClick={() => this.onButtonClick(element)}>{element}</a>
       )
     }
     return elem;
@@ -102,6 +101,7 @@ class HomePage extends React.Component {
         )
       } else
         if (selectedNetwork === 'INSTAGRAM') {
+          console.log(element.id_post)
           elem.push(
             <InstagramEmbed
               key={index}
