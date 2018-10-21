@@ -50,6 +50,7 @@ class HomePage extends React.Component {
   componentDidMount = () => {
     axios.get('http://207.180.216.94/api/v1/users/me')
       .then(response => {
+        this.setState({ userID: response.data.data.id })
         axios.get('http://207.180.216.94/api/v1/users/' + response.data.data.id + '/sleeves')
           .then(response1 => {
             this.setState({
@@ -59,18 +60,47 @@ class HomePage extends React.Component {
       })
   }
 
+  getPost = (SocialNetwork) => {
+    axios.get('http://207.180.216.94/api/v1/users/' + this.state.userID + '/posts?networkName=' + SocialNetwork)
+      .then(response => {
+        this.setState({
+          posts: response.data.data.rows
+        })
+      })
+  }
+
+  renderButtons = () => {
+    var elem = [];
+    var socialNetworkList = this.state.socialNetworks;
+    console.log(this.state.socialNetworks.length)
+    for (var index = 0; index < socialNetworkList.length; index++) {
+      const element = socialNetworkList[index].name;
+      elem.push(
+        <a onClick={this.onButtonClick(element)}>{element}</a>
+      )
+    }
+    return elem;
+  }
+
+  onButtonClick = () => {
+    this.getPost(element.SocialNetwork.name)
+    this.setState({
+      selectedNetwork: element.SocialNetwork.name
+    })
+  }
+
   renderPost = () => {
     var elem = [];
     var postList = this.state.posts;
     console.log(this.state.posts.length)
     for (var index = 0; index < postList.length; index++) {
       const element = postList[index];
-      if (element.type === 'tweet') {
+      if (selectedNetwork === 'TWITTER') {
         elem.push(
           <TwitterTweetEmbed key={index} tweetId={element.id_post} />
         )
       } else
-        if (element.type === 'image') {
+        if (selectedNetwork === 'INSTAGRAM') {
           elem.push(
             <InstagramEmbed
               key={index}
@@ -90,7 +120,7 @@ class HomePage extends React.Component {
         <Navbar light expand="md">
           <Col md="4">
             <NavbarBrand href="/">
-
+              <this.renderButtons />
             </NavbarBrand>
           </Col>
           <NavbarToggler onClick={this.toggle} />
@@ -237,7 +267,7 @@ class HomePage extends React.Component {
                     </Collapse>
                   </div>
                   <br />
-                  
+
                   < div style={{ display: 'table', margin: 'auto', color: '#000' }}>
                     <Pagination
                       count={this.state.ordersPagination.count}
