@@ -16,7 +16,6 @@ class LoginPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.submiTwoFAtHandle = this.submiTwoFAtHandle.bind(this);
         this.submitCredentialsHandle = this.submitCredentialsHandle.bind(this);
         this.state = {
             email: "",
@@ -54,27 +53,6 @@ class LoginPage extends React.Component {
                 }
             });
     }
-    submiTwoFAtHandle(e) {
-        e.preventDefault();
-        this.setState({ verifyLoading: true });
-        axios.post('http://207.180.216.94/api/v1/users/login1', {
-            token: e.target.token.value
-        })
-            .then(response => {
-                return axios.get('http://207.180.216.94/api/v1/users/me')
-            })
-            .then(response => {
-                // this.props.userProfileSetUserId(response.data.data.id);
-                this.setState({ verifyLoading: false });
-            })
-            .catch((error) => {
-                if (error.response.status === 401 || error.response.status === 422) {
-                    // this.props.showErrorMessage(error.response.data.error.message);
-                }
-                this.setState({ verifyLoading: false });
-            });
-    }
-
 
     changeEmail = (e) => {
         this.setState({

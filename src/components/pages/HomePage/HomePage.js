@@ -58,6 +58,12 @@ class HomePage extends React.Component {
             })
           })
       })
+      .catch((error) => {
+        console.log(error)
+        if (error.response.status === 401) {
+            this.props.history.push('/login');
+        }
+    });
   }
 
   getPost = (SocialNetwork) => {
