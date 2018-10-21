@@ -72,7 +72,7 @@ class HomePage extends React.Component {
   renderButtons = () => {
     var elem = [];
     var socialNetworkList = this.state.socialNetworks;
-    console.log(this.state.socialNetworks.length)
+    console.log(this.state.socialNetworks)
     for (var index = 0; index < socialNetworkList.length; index++) {
       const element = socialNetworkList[index].name;
       elem.push(
