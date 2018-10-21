@@ -82,10 +82,10 @@ class HomePage extends React.Component {
     return elem;
   }
 
-  onButtonClick = () => {
-    this.getPost(element.SocialNetwork.name)
+  onButtonClick = element => {
+    this.getPost(element)
     this.setState({
-      selectedNetwork: element.SocialNetwork.name
+      selectedNetwork: element
     })
   }
 
