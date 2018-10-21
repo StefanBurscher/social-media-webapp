@@ -105,7 +105,7 @@ class HomePage extends React.Component {
           elem.push(
             <InstagramEmbed
               key={index}
-              url={element.data.link}
+              url={JSON.parse(element.data).link}
             />
           )
         }
