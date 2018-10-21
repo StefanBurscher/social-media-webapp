@@ -76,7 +76,7 @@ class HomePage extends React.Component {
     for (var index = 0; index < socialNetworkList.length; index++) {
       const element = socialNetworkList[index].SocialNetwork.name;
       elem.push(
-        <a onClick={this.onButtonClick(element)}>{element}</a>
+        <a onClick={() => this.onButtonClick(element)}>{element}</a>
       )
     }
     return elem;
