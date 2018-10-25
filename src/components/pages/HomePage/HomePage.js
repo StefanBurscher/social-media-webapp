@@ -30,7 +30,9 @@ import {
   DropdownMenu,
   DropdownItem,
   Container,
-  Media
+  Media,
+  ListGroup,
+  ListGroupItem
 } from 'reactstrap';
 import classnames from 'classnames';
 import './HomePage.css';
@@ -38,6 +40,29 @@ import Pagination from '../../atoms/Pagination/Pagination';
 import axios from 'axios';
 import NewWindow from 'react-new-window'
 import { Doughnut } from 'react-chartjs-2';
+import FineUploaderTraditional from 'fine-uploader-wrappers'
+import Gallery from 'react-fine-uploader'
+
+// ...or load this specific CSS file using a <link> tag in your document
+import 'react-fine-uploader/gallery/gallery.css'
+
+const uploader = new FineUploaderTraditional({
+  options: {
+    chunking: {
+      enabled: true
+    },
+    deleteFile: {
+      enabled: true,
+      endpoint: '/uploads'
+    },
+    request: {
+      endpoint: '/uploads'
+    },
+    retry: {
+      enableAuto: true
+    }
+  }
+})
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -260,26 +285,39 @@ class HomePage extends React.Component {
             </Row>
             <h1><strong>e</strong> dossier</h1>
             <Row>
-
               <Col md="3">
-                <Card style={{ color: '#000', padding: '10px' }}>
-                  Business description <Input type="textarea" name="text" id="exampleText" />
-                </Card>
+                Business description <br /><Input type="textarea" name="text" id="exampleText" />
               </Col>
-              <Col md="3">
-                <Card style={{ color: '#000', padding: '10px' }}>
-                  Business description<Input type="textarea" name="text" id="exampleText" />
-                </Card>
+              <Col md="5">
+                Marketing Collaterals <br />
+                <Gallery uploader={uploader} />
+                <br />
               </Col>
-              <Col md="3">
-                <Card style={{ color: '#000', padding: '10px' }}>
-                  Business description<Input type="textarea" name="text" id="exampleText" />
-                </Card>
+              <Col md="4">
+                Campaign Messaging <br />
+                <ListGroup>
+                  <ListGroupItem>Cras justo odio</ListGroupItem>
+                  <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+                  <ListGroupItem>Morbi leo risus</ListGroupItem>
+                  <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+                  <ListGroupItem>Vestibulum at eros</ListGroupItem>
+                </ListGroup>
               </Col>
             </Row>
           </div >
           {/* <Media object src="log.png" width="100%" alt="Generic placeholder image" /> */}
         </Container>
+        <Navbar color="light" light expand="md">
+          <Container>
+            <NavbarBrand href="/" style={{ color: '#fff' }}>Footer</NavbarBrand>
+            <br/>
+            <br/>
+            <br/>
+            <br/><br/>
+            <br/>
+            <br/>
+          </Container>
+        </Navbar>
       </div >
     );
   }
