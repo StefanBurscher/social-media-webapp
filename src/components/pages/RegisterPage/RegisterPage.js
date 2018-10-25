@@ -62,7 +62,7 @@ class LoginPage extends React.Component {
         this.setState({ accountLoading: true });
 
         axios.post('http://207.180.216.94/api/v1/users/register', {
-            first_name: this.first_name,
+            first_name: this.state.first_name,
             last_name: this.state.last_name,
             email: this.state.email,
             password: this.state.password,
