@@ -187,10 +187,10 @@ class HomePage extends React.Component {
           <div style={{ padding: '0 15px' }}>
             <br />
             <Row>
-              <Col md="9" style={{ padding: 0 }}>
+              <Col md="7" style={{ padding: 0 }}>
                 <this.renderPost />
               </Col>
-              <Col md="3" style={{ padding: 0 }}>
+              <Col md="5" style={{ padding: 0 }}>
                 <Card style={{ color: '#000' }}>
                   <CardBody>
                     <Doughnut data={data} />
