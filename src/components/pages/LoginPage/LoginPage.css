@@ -8,7 +8,7 @@
 .form-bg {	
     border-radius: 15px;
     background-color: #F5F6FA;
-    border: 2px solid #86aae4;
+    border: 2px solid #333C4E;
     width: 100%;
     padding: 35px;
 }
@@ -32,4 +32,9 @@
     .main-form {
         width: 80%;
     }
+}
+
+button.btn-secondary {
+    background-color: #333C4E;
+    border-color: #333C4E;
 }

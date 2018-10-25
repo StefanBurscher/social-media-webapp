@@ -18,10 +18,10 @@ export default class LoginLayout extends Component {
                         <div style={{ minHeight: '100vh' }}>
                             <div style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', width: '100%' }}>
                                 <br />
-                                <Link to="/" className="d-block text-center">
-                                    <Media object src="GSV.png" width="200" alt="Generic placeholder image" />
+                                {/* <Link to="/" className="d-block text-center">
+                                    Social media
                                     <br />
-                                </Link>
+                                </Link> */}
                                 {this.props.children[0]}
                                 <br />
                             </div>
@@ -31,10 +31,10 @@ export default class LoginLayout extends Component {
                     <div className="main-form back">
                         <div style={{ minHeight: '100vh' }}>
                             <div style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', width: '100%' }}>
-                                <Link to="/" className="d-block text-center">
-                                    <Media object src="GSV.png" width="200" alt="Generic placeholder image" />
+                                {/* <Link to="/" className="d-block text-center">
+                                    Social media
                                     <br />
-                                </Link>
+                                </Link> */}
                                 {this.props.children[1]}
                             </div>
                         </div>

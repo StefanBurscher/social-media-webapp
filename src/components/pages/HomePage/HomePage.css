@@ -79,12 +79,16 @@ canvas {
     display: block !important;
 }
 
-.navbar.navbar-expand-md.navbar-light {
-    /* background: #fafafa85;
-    position: fixed;
+.navbar.bg-light {
+    background: #333C4E !important;
+    /* position: fixed;
     margin: 0;
     z-index: 1000;
     border-bottom: 1px solid #ebebeb4d; */
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
 }
 
 

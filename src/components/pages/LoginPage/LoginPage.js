@@ -7,7 +7,34 @@ import axios from 'axios';
 //     userProfileSetUserId,
 // } from '../../../redux/actions';
 // import { connect } from 'react-redux';
-
+import {
+    Row,
+    Col,
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    Card,
+    CardBody,
+    CardText,
+    CardTitle,
+    Button,
+    Table,
+    TabContent,
+    TabPane,
+    FormGroup,
+    Label,
+    Input,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Media,
+    Form,
+  } from 'reactstrap';
 import LoginLayout from '../../organisms/LoginLayout/LoginLayout';
 import InputTwoFA from '../../atoms/InputTwoFA/InputTwoFA';
 import LoginContainer from '../../atoms/LoginContainer/LoginContainer';
@@ -73,16 +100,34 @@ class LoginPage extends React.Component {
             <LoginLayout>
                 <div>
                     <LoginContainer>
-                        <form onSubmit={this.submitCredentialsHandle}>
-                            <InputFieldLogin type="email" changereduxdata={this.changeEmail} text={"Email"} placeholder="" value={this.props.email} maskChar={null} /> <br />
-                            <InputFieldLogin type="password" changereduxdata={this.changePassword} text={"Password"} placeholder="" value={this.props.password} maskChar={null} />
-                            <br />
-                            <RoundedButton
-                                loading={this.state.accountLoading}
-                                style={{ display: 'block', margin: '0 auto', width: '150px' }}>
-                                LOGIN
-                            </RoundedButton>
-                        </form>
+                        <h2>Sign In</h2>
+                        <Form className="form" onSubmit={this.submitCredentialsHandle}>
+                            <Col style={{padding: 0}}>
+                                <FormGroup>
+                                    <Label>Email</Label>
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        id="exampleEmail"
+                                        placeholder="myemail@email.com"
+                                        onInput={this.changeEmail}
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col style={{padding: 0}}>
+                                <FormGroup>
+                                    <Label for="examplePassword">Password</Label>
+                                    <Input
+                                        type="password"
+                                        name="password"
+                                        id="examplePassword"
+                                        placeholder="********"
+                                        onInput={this.changePassword}
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Button>Submit</Button>
+                        </Form>
                     </LoginContainer>
                 </div>
                 <div>
