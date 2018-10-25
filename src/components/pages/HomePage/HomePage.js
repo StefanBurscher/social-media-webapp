@@ -133,28 +133,76 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const data = {
+    const data1 = {
       labels: [
         'Red',
-        'Green',
-        'Yellow'
+        'Green'
       ],
       datasets: [{
-        data: [300, 50, 100],
+        data: [300, 100],
         backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56'
+          '#FF6384',
+          '#00BCD4',
         ],
         hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56'
+          '#FF6384',
+          '#00BCD4',
         ]
       }]
     };
-    console.log(Doughnut)
-    
+    const data2 = {
+      labels: [
+        'Green',
+      ],
+      datasets: [{
+        data: [300],
+        backgroundColor: [
+          '#FF6384',
+          '#00BCD4',
+          '#FFCE56'
+        ],
+        hoverBackgroundColor: [
+          '#FF6384',
+          '#00BCD4',
+          '#FFCE56'
+        ]
+      }]
+    };
+    const data3 = {
+      labels: [
+        'Red',
+        'Yellow'
+      ],
+      datasets: [{
+        data: [207, 380],
+        backgroundColor: [
+          '#FF6384',
+          '#FFCE56'
+        ],
+        hoverBackgroundColor: [
+          '#FF6384',
+          '#FFCE56'
+        ]
+      }]
+    };
+    const data4 = {
+      labels: [
+        'Red',
+        'Green'
+      ],
+      datasets: [{
+        data: [300, 100],
+        backgroundColor: [
+          '#FF6384',
+          '#00BCD4',
+        ],
+        hoverBackgroundColor: [
+          '#FF6384',
+          '#00BCD4',
+        ]
+      }]
+    };
+
     return (
       <div>
         <Navbar color="light" light expand="md">
@@ -193,25 +241,19 @@ class HomePage extends React.Component {
               <Col md="5" style={{ padding: 0 }}>
                 <Card style={{ color: '#000' }}>
                   <CardBody>
-                    <Doughnut data={data} />
+                    <Doughnut data={data1} />
                   </CardBody>
                 </Card>
                 <br />
                 <Card style={{ color: '#000' }}>
                   <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>Button</Button>
+                    <Doughnut data={data2} />
                   </CardBody>
                 </Card>
                 <br />
                 <Card style={{ color: '#000' }}>
                   <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>Button</Button>
+                    <Doughnut data={data3} />
                   </CardBody>
                 </Card>
               </Col >
