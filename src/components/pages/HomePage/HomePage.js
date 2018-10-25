@@ -88,7 +88,7 @@ class HomePage extends React.Component {
     for (var index = 0; index < socialNetworkList.length; index++) {
       const element = socialNetworkList[index].SocialNetwork.name;
       elem.push(
-        <a href="#" onClick={() => this.onButtonClick(element)}>{element}</a>
+        <a href="#" style={{ padding: '5px', border: '1px solid #00BCD4', color: '#00BCD4', marginRight: '5px' }} onClick={() => this.onButtonClick(element)}>{element}</a>
       )
     }
     return elem;
@@ -154,6 +154,8 @@ class HomePage extends React.Component {
           {this.state.open ?
             <NewWindow center="screen" url="https://www.instagram.com/oauth/authorize/?client_id=5df48e0684bc4e349f2f093cd9cf953c&redirect_uri=http://207.180.216.94/api/v1/users/register_access_token/&response_type=code" />
             : null}
+            <br/>
+          <this.renderButtons />
 
           <div style={{ padding: '0 15px' }}>
             <br />
