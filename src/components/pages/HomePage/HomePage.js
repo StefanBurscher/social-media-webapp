@@ -144,11 +144,16 @@ class HomePage extends React.Component {
           </Container>
         </Navbar>
         <Container>
-
-        <a href="#" onClick={() => this.setState({ open: true })}>Instagram</a>
-        {this.state.open ?
-          <NewWindow center="screen" url="https://www.instagram.com/oauth/authorize/?client_id=5df48e0684bc4e349f2f093cd9cf953c&redirect_uri=http://207.180.216.94/api/v1/users/register_access_token/&response_type=code" />
-          : null}
+          <br />
+          <div>
+            <a style={{ padding: '5px', border: '1px solid #00BCD4', color: '#00BCD4', marginRight: '5px' }} href="#" onClick={() => this.setState({ open: true })}>Instagram</a>
+            <a style={{ padding: '5px', border: '1px solid #00BCD4', color: '#00BCD4', marginRight: '5px' }} href="#">Facebook</a>
+            <a style={{ padding: '5px', border: '1px solid #00BCD4', color: '#00BCD4', marginRight: '5px' }} href="#">Linkedin</a>
+            <a style={{ padding: '5px', border: '1px solid #00BCD4', color: '#00BCD4', marginRight: '5px' }} href="#">Twitter</a>
+          </div>
+          {this.state.open ?
+            <NewWindow center="screen" url="https://www.instagram.com/oauth/authorize/?client_id=5df48e0684bc4e349f2f093cd9cf953c&redirect_uri=http://207.180.216.94/api/v1/users/register_access_token/&response_type=code" />
+            : null}
 
           <div style={{ padding: '0 15px' }}>
             <br />
