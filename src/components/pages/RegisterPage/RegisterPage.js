@@ -141,7 +141,6 @@ class LoginPage extends React.Component {
                                     <Input
                                         type="text"
                                         name="last_name"
-                                        id="exampleEmail"
                                         // placeholder="myemail@email.com"
                                         onInput={this.changeLsName}
                                     />
@@ -153,7 +152,6 @@ class LoginPage extends React.Component {
                                     <Input
                                         type="email"
                                         name="email"
-                                        id="exampleEmail"
                                         placeholder="myemail@email.com"
                                         onInput={this.changeEmail}
                                     />
@@ -165,7 +163,6 @@ class LoginPage extends React.Component {
                                     <Input
                                         type="password"
                                         name="password"
-                                        id="examplePassword"
                                         placeholder="********"
                                         onInput={this.changePassword}
                                     />
@@ -177,7 +174,6 @@ class LoginPage extends React.Component {
                                     <Input
                                         type="password"
                                         name="password1"
-                                        // id="examplePassword"
                                         placeholder="********"
                                         onInput={this.changePassword1}
                                     />
