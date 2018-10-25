@@ -62,7 +62,8 @@ class LoginPage extends React.Component {
             first_name: this.first_name,
             last_name: this.state.last_name,
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            password_repeat: this.state.password1
         })
             .then(response => {
                 this.setState({ accountLoading: false });
@@ -105,6 +106,13 @@ class LoginPage extends React.Component {
     changePassword = (e) => {
         this.setState({
             password: e.target.value
+        })
+
+    }
+
+    changePassword1 = (e) => {
+        this.setState({
+            password1: e.target.value
         })
 
     }
@@ -160,6 +168,18 @@ class LoginPage extends React.Component {
                                         id="examplePassword"
                                         placeholder="********"
                                         onInput={this.changePassword}
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col style={{padding: 0}}>
+                                <FormGroup>
+                                    <Label for="examplePassword">Password repeat</Label>
+                                    <Input
+                                        type="password"
+                                        name="password1"
+                                        // id="examplePassword"
+                                        placeholder="********"
+                                        onInput={this.changePassword1}
                                     />
                                 </FormGroup>
                             </Col>
