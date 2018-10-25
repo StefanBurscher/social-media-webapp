@@ -153,6 +153,7 @@ class HomePage extends React.Component {
         ]
       }]
     };
+    console.log(Doughnut)
     
     return (
       <div>
