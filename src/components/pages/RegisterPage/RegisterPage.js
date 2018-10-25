@@ -145,7 +145,7 @@ class LoginPage extends React.Component {
                                         type="text"
                                         name="last_name"
                                         // placeholder="myemail@email.com"
-                                        onInput={this.changeLsName}
+                                        onInput={this.changeLName}
                                     />
                                 </FormGroup>
                             </Col>
