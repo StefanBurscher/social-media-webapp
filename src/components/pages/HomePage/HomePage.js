@@ -63,6 +63,9 @@ class HomePage extends React.Component {
             this.setState({
               socialNetworks: response1.data.data.items
             })
+            if (response1.data.data.items.length === 1) {
+              this.onButtonClick(response1.data.data.items[0].SocialNetwork.name)
+            }
           })
       })
       .catch((error) => {
@@ -154,7 +157,7 @@ class HomePage extends React.Component {
           {this.state.open ?
             <NewWindow center="screen" url="https://www.instagram.com/oauth/authorize/?client_id=5df48e0684bc4e349f2f093cd9cf953c&redirect_uri=http://207.180.216.94/api/v1/users/register_access_token/&response_type=code" />
             : null}
-            <br/>
+          <br />
           <this.renderButtons />
 
           <div style={{ padding: '0 15px' }}>
