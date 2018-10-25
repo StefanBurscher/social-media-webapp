@@ -24,6 +24,7 @@ import {
   FormGroup,
   Label,
   Input,
+  CardSubtitle,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -163,11 +164,34 @@ class HomePage extends React.Component {
           <div style={{ padding: '0 15px' }}>
             <br />
             <Row>
-              <Col md="9">
+              <Col md="9" style={{ padding: 0 }}>
                 <this.renderPost />
               </Col>
-              <Col md="3">
-
+              <Col md="3" style={{ padding: 0 }}>
+                <Card style={{color: '#000'}}>
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                    <CardSubtitle>Card subtitle</CardSubtitle>
+                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <Button>Button</Button>
+                  </CardBody>
+                </Card>
+                <Card style={{color: '#000'}}>
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                    <CardSubtitle>Card subtitle</CardSubtitle>
+                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <Button>Button</Button>
+                  </CardBody>
+                </Card>
+                <Card style={{color: '#000'}}>
+                  <CardBody>
+                    <CardTitle>Card title</CardTitle>
+                    <CardSubtitle>Card subtitle</CardSubtitle>
+                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <Button>Button</Button>
+                  </CardBody>
+                </Card>
               </Col >
             </Row >
           </div >
