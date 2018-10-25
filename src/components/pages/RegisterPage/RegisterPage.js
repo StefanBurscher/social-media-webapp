@@ -45,8 +45,11 @@ class LoginPage extends React.Component {
         super(props);
         this.submitCredentialsHandle = this.submitCredentialsHandle.bind(this);
         this.state = {
+            first_name: '',
+            last_name:'',
             email: "",
             password: "",
+            password1: '',
             errors: "",
             emailConfirmationBackend: '',
             accountLoading: false,
