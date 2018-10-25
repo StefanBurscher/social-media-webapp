@@ -5,8 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.2",
+    "chart.js": "^2.7.3",
     "namor": "^1.0.1",
     "react": "^16.4.1",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.4.1",
     "react-input-mask": "^2.0.2",
     "react-instagram-embed": "^1.4.0",

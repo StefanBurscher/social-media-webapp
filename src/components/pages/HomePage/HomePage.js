@@ -37,6 +37,7 @@ import './HomePage.css';
 import Pagination from '../../atoms/Pagination/Pagination';
 import axios from 'axios';
 import NewWindow from 'react-new-window'
+import { Doughnut } from 'react-chartjs-2';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -132,8 +133,29 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const data = {
+      labels: [
+        'Red',
+        'Green',
+        'Yellow'
+      ],
+      datasets: [{
+        data: [300, 50, 100],
+        backgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+        ],
+        hoverBackgroundColor: [
+        '#FF6384',
+        '#36A2EB',
+        '#FFCE56'
+        ]
+      }]
+    };
+    
     return (
-      <div style={{ color: '#fff' }}>
+      <div>
         <Navbar color="light" light expand="md">
           <Container>
             <NavbarBrand href="/" style={{ color: '#fff' }}>Social media</NavbarBrand>
@@ -168,7 +190,13 @@ class HomePage extends React.Component {
                 <this.renderPost />
               </Col>
               <Col md="3" style={{ padding: 0 }}>
-                <Card style={{color: '#000'}}>
+                <Card style={{ color: '#000' }}>
+                  <CardBody>
+                    <Doughnut data={data} />
+                  </CardBody>
+                </Card>
+                <br />
+                <Card style={{ color: '#000' }}>
                   <CardBody>
                     <CardTitle>Card title</CardTitle>
                     <CardSubtitle>Card subtitle</CardSubtitle>
@@ -176,15 +204,8 @@ class HomePage extends React.Component {
                     <Button>Button</Button>
                   </CardBody>
                 </Card>
-                <Card style={{color: '#000'}}>
-                  <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button>Button</Button>
-                  </CardBody>
-                </Card>
-                <Card style={{color: '#000'}}>
+                <br />
+                <Card style={{ color: '#000' }}>
                   <CardBody>
                     <CardTitle>Card title</CardTitle>
                     <CardSubtitle>Card subtitle</CardSubtitle>
@@ -193,7 +214,26 @@ class HomePage extends React.Component {
                   </CardBody>
                 </Card>
               </Col >
-            </Row >
+            </Row>
+            <h1><strong>e</strong> dossier</h1>
+            <Row>
+
+              <Col md="3">
+                <Card style={{ color: '#000', padding: '10px' }}>
+                  Business description <Input type="textarea" name="text" id="exampleText" />
+                </Card>
+              </Col>
+              <Col md="3">
+                <Card style={{ color: '#000', padding: '10px' }}>
+                  Business description<Input type="textarea" name="text" id="exampleText" />
+                </Card>
+              </Col>
+              <Col md="3">
+                <Card style={{ color: '#000', padding: '10px' }}>
+                  Business description<Input type="textarea" name="text" id="exampleText" />
+                </Card>
+              </Col>
+            </Row>
           </div >
           {/* <Media object src="log.png" width="100%" alt="Generic placeholder image" /> */}
         </Container>
